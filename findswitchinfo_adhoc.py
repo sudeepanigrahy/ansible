@@ -27,7 +27,7 @@ def switch_info_finder(connection, switch, command):
     strip_prompt=False,
     strip_command=False)
 
-    output += connection.send_command_timing(command_string=r"Sueme@0128",                              
+    output += connection.send_command_timing(command_string=r"***password*****",                              
     strip_prompt=False,
     strip_command=False)
 
