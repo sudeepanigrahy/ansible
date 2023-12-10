@@ -47,7 +47,7 @@ def switch_info_finder(connection, switch, command, grepping):
         strip_prompt=True,
         strip_command=True)
 
-        output += connection.send_command_timing(command_string=r"Sueme@0128",                              
+        output += connection.send_command_timing(command_string=r"*****password****",                              
         strip_prompt=True,
         strip_command=True)
     except:
