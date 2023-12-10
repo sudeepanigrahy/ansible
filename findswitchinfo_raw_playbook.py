@@ -1,8 +1,8 @@
 # The python script will have to be executed from cli, and
 # the switch and cli_command will have to be passed, in that order,
 # inside of double-quotes, from the cli itself, two examples are:
-# >python .\findswitchinfo_raw_playbook.py "****************" "sh ip int br" "| additional grepping if you'd like"
-# >python .\findswitchinfo_raw_playbook.py "******************" "get mac address-table" "| grep -v 'CPU\|Gi1/1/1'"
+# >python .\findswitchinfo_raw_playbook.py "******switchname**********" "sh ip int br" "| additional grepping if you'd like"
+# >python .\findswitchinfo_raw_playbook.py "********switchname**********" "get mac address-table" "| grep -v 'CPU\|Gi1/1/1'"
 import sys
 import time
 from netmiko import ConnectHandler
@@ -48,7 +48,7 @@ def switch_info_finder(connection, switch, command, grepping):
         strip_prompt=True,
         strip_command=True)
 
-        output += connection.send_command_timing(command_string=r"Sueme@0128",                              
+        output += connection.send_command_timing(command_string=r"*********",                              
         strip_prompt=True,
         strip_command=True)
     except:
