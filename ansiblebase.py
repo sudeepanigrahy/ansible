@@ -7,9 +7,9 @@ from netmiko import ConnectHandler
 
 kwargs = {
         'device_type': 'linux',
-        'ip': '10.70.85.211',
-        'username': 'spanigrahy',
-        'password': 'Sueme@0128',
+        'ip': '10.x.x.x',
+        'username': '*******',
+        'password': '*******',
         'port': 22,
         'verbose':True
         }
