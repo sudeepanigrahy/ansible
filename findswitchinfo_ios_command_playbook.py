@@ -24,15 +24,15 @@ def switch_info_finder(connection, switch, command, grepping):
     #time.sleep(100/1000)
 
     if command=="sh ip int br":
-        ansible_command = f"ansible-playbook -i /root/hosts1 shipintbr_ios_command.yml -u spanigrahy -k {grepping}"
+        ansible_command = f"ansible-playbook -i /root/hosts1 shipintbr_ios_command.yml -u ******** -k {grepping}"
     elif command=="sh ver" or command=="sh version":
-        ansible_command = f"ansible-playbook -i /root/hosts1 shver_ios_command.yml -u spanigrahy -k {grepping}"
+        ansible_command = f"ansible-playbook -i /root/hosts1 shver_ios_command.yml -u ******* -k {grepping}"
     elif command=="sh int status":
-        ansible_command = f"ansible-playbook -i /root/hosts1 shintstatus_ios_command.yml -u spanigrahy -k {grepping}"
+        ansible_command = f"ansible-playbook -i /root/hosts1 shintstatus_ios_command.yml -u ******** -k {grepping}"
     elif 'mac' in command or 'address-table' in command:
-        ansible_command = f"ansible-playbook -i /root/hosts1 getmac_ios_command.yml -u spanigrahy -k {grepping}"
+        ansible_command = f"ansible-playbook -i /root/hosts1 getmac_ios_command.yml -u ******** -k {grepping}"
     elif 'cdp' in command or 'nei' in command or 'neighbors' in command or 'neighbor' in command:
-        ansible_command = f"ansible-playbook -i /root/hosts1 shcdpnei_ios_command.yml -u spanigrahy -k {grepping}"
+        ansible_command = f"ansible-playbook -i /root/hosts1 shcdpnei_ios_command.yml -u ******** -k {grepping}"
     else: print("Type the command clearly..")
 
     print(f"\nExecuting on Ansible: {ansible_command}\n")
@@ -60,9 +60,9 @@ if __name__=="__main__":
 
     kwargs = {
         'device_type': 'linux',
-        'ip': '10.70.85.211',
-        'username': 'spanigrahy',
-        'password': 'Sueme@0128',
+        'ip': '10.x.x.x',
+        'username': '*********',
+        'password': '********',
         'port': 22,
         'verbose':True
         }
