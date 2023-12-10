@@ -1,0 +1,14 @@
+---
+- name: show int status
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: use ios_command module for showing int status
+    ios_command:
+        commands:
+            - show int status
+    register: print_output
+
+  - debug: var=print_output.stdout_lines

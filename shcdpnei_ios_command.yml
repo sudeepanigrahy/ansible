@@ -1,0 +1,14 @@
+---
+- name: show neighbors
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: use ios_command module for showing neighbors
+    ios_command:
+        commands:
+            - show cdp neighbors
+    register: print_output
+
+  - debug: var=print_output.stdout_lines
