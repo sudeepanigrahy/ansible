@@ -10,10 +10,10 @@ ssh_client=paramiko.SSHClient()
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 kwargs = { 
-        'hostname':'10.70.85.211',
+        'hostname':'10.x.x.x',
         'port':'22',
-        'username':'spanigrahy',
-        'password':'Sueme@0128'
+        'username':'*********',
+        'password':'********'
           }
 
 ssh_client.connect(**kwargs, look_for_keys=False, allow_agent=False)
@@ -24,17 +24,17 @@ shell=ssh_client.invoke_shell()
 
 shell.send('sudo -i\n')
 time.sleep(1)
-shell.send("ansible 10.70.126.152 -m raw -a 'show version | i uptime' -u spanigrahy -k\n")
+shell.send("ansible 10.x.x.x -m raw -a 'show version | i uptime' -u ****** -k\n")
 time.sleep(1)
-shell.send('Sueme@0128\n')
+shell.send('********\n')
 time.sleep(1)
 output=shell.recv(20000)
 output=output.decode('utf-8')
 print(output)
 """
 stdin, stdout, stderr = ssh_client.exec_command("sudo -i\n")
-stdin, stdout, stderr = ssh_client.exec_command("ansible 10.70.126.152 -m raw -a 'show version | i uptime' -u spanigrahy -k\n")
-stdin.write("Sueme@0128\n")
+stdin, stdout, stderr = ssh_client.exec_command("ansible 10.x.x.x -m raw -a 'show version | i uptime' -u ********* -k\n")
+stdin.write("*******\n")
 time.sleep(2)
 
 output = stdout.read()
