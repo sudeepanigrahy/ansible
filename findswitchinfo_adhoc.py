@@ -1,7 +1,7 @@
 # The python script will have to be executed from cli, and
 # the switch and cli_command will have to be passed, in that order,
 # inside of double-quotes, from the cli itself, an example is:
-# >python findswitchinfo_adhoc.py "10.70.126.152" "sh ip int br" 
+# >python findswitchinfo_adhoc.py "10.x.x.x" "sh ip int br" 
 
 import sys
 import time
@@ -21,7 +21,7 @@ def switch_info_finder(connection, switch, command):
                             strip_command=False)
     #time.sleep(300/1000)
 
-    ansible_command = f'ansible -i /root/hosts1 {switch} -m raw -a "{command}" -u spanigrahy -k'
+    ansible_command = f'ansible -i /root/hosts1 {switch} -m raw -a "{command}" -u ******** -k'
 
     output = connection.send_command_timing(command_string=ansible_command,
     strip_prompt=False,
@@ -41,9 +41,9 @@ if __name__=="__main__":
 
     kwargs = {
         'device_type': 'linux',
-        'ip': '10.70.85.211',
-        'username': 'spanigrahy',
-        'password': 'Sueme@0128',
+        'ip': '10.x.x.x',
+        'username': '*******',
+        'password': '*******',
         'port': 22,
         'verbose':True
         }
