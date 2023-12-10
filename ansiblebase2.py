@@ -10,9 +10,9 @@ from netmiko import ConnectHandler
 
 kwargs = {
         'device_type': 'linux',
-        'ip': '10.70.85.211',
-        'username': 'spanigrahy',
-        'password': 'Sueme@0128',
+        'ip': '10.x.x.x',
+        'username': '*******',
+        'password': '*******',
         'port': 22,
         'verbose':True
         }
@@ -28,15 +28,15 @@ connection.send_command(command_string="sudo -i",
                        strip_command=False)
 
 
-command = "ansible-playbook -i /root/hosts getmac.yml -u spanigrahy -k | grep -v 'Gi1/1/1\|CPU\|Te1/1/3\|Te1/0/1'"
-#command = 'ansible sg624-atdc103-as0104p-cn.imfs.micron.com -m raw -a "show version | i uptime" -u spanigrahy -k'
-#command = 'ansible 10.70.126.152 -m raw -a "show version | i uptime" -u spanigrahy -k'
+command = "ansible-playbook -i /root/hosts getmac.yml -u ******** -k | grep -v 'Gi1/1/1\|CPU\|Te1/1/3\|Te1/0/1'"
+#command = 'ansible ****************** -m raw -a "show version | i uptime" -u ********** -k'
+#command = 'ansible 10.x.x.x -m raw -a "show version | i uptime" -u ********** -k'
 #
 
 # This 'send_command_timing()' method from netmiko is used when
 # we have to execute multiple commands one after the other on a switch's/server's cli
 
-#output = connection.send_multiline_timing(['ansible 10.160.34.37 -m raw -a "show version | i uptime" -u spanigrahy -k', 'Sueme@0128'])
+#output = connection.send_multiline_timing(['ansible 10.x.x.x -m raw -a "show version | i uptime" -u ******** -k', '*******'])
 try:
     output = connection.send_command_timing(command_string="cd playbooks",
         strip_prompt=True,
