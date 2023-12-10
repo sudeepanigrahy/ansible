@@ -1,7 +1,7 @@
 # The python script will have to be executed from cli, and
 # the switch and cli_command will have to be passed, in that order,
 # inside of double-quotes, from the cli itself, two examples are:
-# >python .\findswitchinfo_ios_command_playbook.py "sg209-b1rm5x-as6-cn240.sing.micron.com" "sh ver" "| additional grepping if you'd like"
+# >python .\findswitchinfo_ios_command_playbook.py "***switch_name*****" "sh ver" "| additional grepping if you'd like"
 import sys
 import time
 from netmiko import ConnectHandler
