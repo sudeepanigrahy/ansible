@@ -8,10 +8,10 @@ ssh_client=paramiko.SSHClient()
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 kwargs = { 
-        'hostname':'10.70.85.211',
+        'hostname':'******',
         'port':'22',
-        'username':'spanigrahy',
-        'password':'Sueme@0128'
+        'username':'*********',
+        'password':'********'
           }
 
 ssh_client.connect(**kwargs, look_for_keys=False, allow_agent=False)
