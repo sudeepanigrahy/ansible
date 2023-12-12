@@ -1,0 +1,26 @@
+# Playbooks are files that contain list-type data. This playbook is also a file that 
+# has list-type data, and it has just one element, i.e. the only play in this playbook.
+# In short, playbooks are a sequence of plays, i.e. a list of plays. This playbook has
+# just the one play, i.e. the first element of the list-type data of this file(btw if 
+# you see, this element in itself is a map-type data), and this
+# play's purpose is to use the 'raw' module to execute a cli command, and then show the 
+# output of that executed command on the ansible control node's shell. 
+# We can see here that a play can have multiple tasks, under the 'tasks' key's value part,
+# which is always a list-type data too. In short, inside a play, under the 'tasks' key's value
+# part, we can have multiple tasks, and these multiple tasks will make use of different modules
+# to fulfill those tasks, for example here the modules used for those multiple tasks are
+# 'raw' and 'debug'.  
+
+---
+- name: Get MAC Addresses info
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: show mac address-table
+      raw: "show mac address-table"
+      register: print_output
+
+    - debug:
+        #var=print_output.stdout_lines
+        msg: "{{ print_output }}"

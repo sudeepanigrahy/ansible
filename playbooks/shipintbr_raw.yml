@@ -1,0 +1,12 @@
+---
+    - name: Get L3 addresses on the switch
+      hosts: msblan
+      gather_facts: false
+
+      tasks:
+        - name: show ip interface brief
+          raw: "sh ip int br"
+          register: print_output
+
+        - name: print the output
+          debug: var=print_output.stdout_lines
